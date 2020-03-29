@@ -1,6 +1,7 @@
 import React from "react";
 import UserItem from "./UserItem";
 import PropTypes from "prop-types";
+import Repos from "../repos/Repos";
 
 //contains all the pops of all users
 const Users = ({ users }) => {
