@@ -6,7 +6,8 @@ const Navbar = ({ icon, title }) => {
   return (
     <nav className='navbar bg-dark'>
       <h2 style={navStyle}>
-        <i className={icon} /> {""} {title}
+        <i style={{ marginRight: "10px" }} className={icon} /> {""}
+        {title}
       </h2>
       <ul>
         <li>
@@ -21,8 +22,8 @@ const Navbar = ({ icon, title }) => {
 };
 
 Navbar.defaultProps = {
-  title: "Github Finder ",
-  icon: "fab fa-github"
+  title: " Github Finder",
+  icon: "fab fa-github "
 };
 
 Navbar.propTypes = {
