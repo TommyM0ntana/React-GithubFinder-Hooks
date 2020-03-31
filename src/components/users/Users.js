@@ -1,21 +1,22 @@
 import React from "react";
 import UserItem from "./UserItem";
-import PropTypes from "prop-types";
 import Repos from "../repos/Repos";
+import GithubContext from "../../context/github/githubContext";
+import { useContext } from "react";
 
 //contains all the pops of all users
 const Users = ({ users }) => {
+  const githubContext = useContext(GithubContext);
+
+  //const { users } = githubContext is the same if we don't asign users as prop in Users
+
   return (
     <div className='container' style={userStyle}>
-      {users.map(user => (
+      {githubContext.users.map(user => (
         <UserItem key={user.id} user={user} />
       ))}
     </div>
   );
-};
-
-Users.propTypes = {
-  users: PropTypes.array.isRequired
 };
 
 const userStyle = {

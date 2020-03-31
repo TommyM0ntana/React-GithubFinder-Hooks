@@ -2,7 +2,13 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import GithubContext from "./githubContext";
 import GithubReducer from "./githubReducer";
-import { SEARCH_USERS, CLEAR_USER, SET_ALERT, GET_REPOS } from "../types";
+import {
+  SEARCH_USERS,
+  CLEAR_USERS,
+  SET_ALERT,
+  GET_REPOS,
+  GET_USER
+} from "../types";
 
 const GithubState = props => {
   const initialState = {
@@ -26,8 +32,23 @@ const GithubState = props => {
   };
 
   //GET USER
+  /* { Function that make the request for the single user  }  */
+  const getUser = async username => {
+    const res = await axios.get(
+      `https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    );
+    dispatch({
+      type: GET_USER,
+      payload: res.data
+    });
+  };
   //GET REPOST
   //CLEAR USERS
+
+  const clearUsers = () =>
+    dispatch({
+      type: CLEAR_USERS
+    });
 
   return (
     <GithubContext.Provider
@@ -35,7 +56,9 @@ const GithubState = props => {
         users: state.users,
         user: state.user,
         repos: state.repos,
-        searchUsers
+        searchUsers,
+        clearUsers,
+        getUser
       }}
     >
       {" "}
