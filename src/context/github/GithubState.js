@@ -9,7 +9,6 @@ import {
   GET_REPOS,
   GET_USER
 } from "../types";
-import { red } from "color-name";
 
 const GithubState = props => {
   const initialState = {
