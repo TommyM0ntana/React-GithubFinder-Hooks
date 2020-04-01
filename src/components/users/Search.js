@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import GithubContext from "../../context/github/githubContext";
 import AlertContext from "../../context/alert/alertContext";
+import "../layout/App.css";
 
 const Search = () => {
   const githubContext = useContext(GithubContext);
@@ -24,12 +25,19 @@ const Search = () => {
   //destructuring to not put to users and clearUsers a.githubContext
   //const { users, clearUsers } = githubContext;
   return (
-    <div>
-      <form onSubmit={onSubmit} className='form'>
+    <div className='formstyle'>
+      <div className='titleback'>
+        <h1>
+          Made for recruiters and developers as the fastest way to find their
+          buddy . . .
+        </h1>
+      </div>
+      <form onSubmit={onSubmit} className='form1'>
         <input
+          className='searchInput'
           name='text'
           type='text'
-          placeholder='search users...'
+          placeholder='Search users...'
           value={text}
           onChange={onChange}
         />
@@ -48,8 +56,15 @@ const Search = () => {
           Clear
         </button>
       )}
+      <h3>
+        Suggestions: all you add will be search in his name, bio o description .{" "}
+      </h3>
     </div>
   );
+};
+
+const searchInput = {
+  borderRadius: "10px"
 };
 
 export default Search;

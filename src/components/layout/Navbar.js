@@ -1,13 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "../layout/App.css";
 
 const Navbar = ({ icon, title }) => {
   return (
     <nav className='navbar bg-dark'>
       <h2 style={navStyle}>
-        <i style={{ marginRight: "10px" }} className={icon} /> {""}
-        {title}
+        <Link to='/' className='titleicon'>
+          <i
+            style={{
+              marginRight: "10px",
+              color: "black",
+              fontSize: "20px",
+              background: "trasparent"
+            }}
+            className={icon}
+          />{" "}
+          {""}
+          {title}
+        </Link>
       </h2>
       <ul>
         <li>
@@ -32,10 +44,12 @@ Navbar.propTypes = {
 };
 
 const navStyle = {
-  color: "#fff",
+  color: "black",
   display: "flex",
-  marginLeft: "40px",
-  alignItems: "center"
+  marginLeft: "5px",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "trasparent"
 };
 
 export default Navbar;

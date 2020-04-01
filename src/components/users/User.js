@@ -34,16 +34,6 @@ const User = ({ match }) => {
 
   return (
     <Fragment>
-      <Link to='/' className='btn btn-light'>
-        {" "}
-        Turn Back
-      </Link>
-      Hireable: {""}
-      {hireable ? (
-        <i className='fas fa-check text-success' />
-      ) : (
-        <i className='fas fa-times-circle text-danger' />
-      )}
       <div className='card grid-2'>
         <div className='all-center'>
           <img
@@ -57,17 +47,27 @@ const User = ({ match }) => {
         </div>
         <div>
           {bio && <p>{bio}</p>}
-
           <ul>
             <li>{email && <Fragment>{email}</Fragment>}</li>
             <li>{location && <Fragment>{location}</Fragment>}</li>
             <li>{created_at && <Fragment>Created: {created_at}</Fragment>}</li>
             <li>{updated_at && <Fragment>Updated: {updated_at}</Fragment>}</li>
           </ul>
-
           <a href={html_url} className='btn btn-dark my-1'>
             Go to Github Profile
           </a>
+          <Link to='/' className='btn btn-light'>
+            {" "}
+            Turn Back
+          </Link>
+          <div>
+            Hireable: {""}
+            {hireable ? (
+              <i className='fas fa-check text-success' />
+            ) : (
+              <i className='fas fa-times-circle text-danger' />
+            )}
+          </div>
         </div>
       </div>
       <div className='card text-center'>
