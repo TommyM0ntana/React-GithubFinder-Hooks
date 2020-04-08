@@ -379,6 +379,18 @@ table th {
   margin-right: 0.6rem;
 }
 
+
+@media (max-width: 1000px) {
+  h1 {
+font-size: 20px;
+  }
+
+  .titleback {
+    padding:0px 0px;
+  }
+}
+
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .hide-sm {

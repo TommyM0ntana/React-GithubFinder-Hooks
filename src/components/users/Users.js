@@ -12,7 +12,7 @@ const Users = ({ users }) => {
   //const { users } = githubContext is the same if we don't asign users as prop in Users
 
   return (
-    <div className='' style={userStyle}>
+    <div className='userstyle'>
       {githubContext.users.map(user => (
         <UserItem key={user.id} user={user} />
       ))}
@@ -20,11 +20,11 @@ const Users = ({ users }) => {
   );
 };
 
-const userStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gridGap: "1.5rem",
-  padding: "0px 20px"
-};
+// const userStyle = {
+//   display: "grid",
+//   gridTemplateColumns: "repeat(3, 1fr)",
+//   gridGap: "1.5rem",
+//   padding: "0px 20px"
+// };
 
 export default Users;
